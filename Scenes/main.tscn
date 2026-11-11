@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3dkb7nemm27c" path="res://icon.svg" id="2_8gbba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_voe2a"]
+size = Vector2(21.11369, 19.58339)
 
 [node name="Main" type="Node" unique_id=1288120309]
 
@@ -24,7 +25,7 @@ scale = Vector2(9.513514, 0.58811784)
 texture = ExtResource("2_8gbba")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=945376730]
-position = Vector2(428, 524)
+position = Vector2(473.00006, 501.99994)
 rotation = -3.1415927
 scale = Vector2(0.07667782, -1.2850444)
 
@@ -38,23 +39,8 @@ position = Vector2(-8.952072, 0.14134407)
 scale = Vector2(9.513514, 0.14811787)
 texture = ExtResource("2_8gbba")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=417670214]
-position = Vector2(583.00006, 464.99994)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1870640540]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=471830659]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
-
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=453357111]
-position = Vector2(734.0001, 419.99997)
+position = Vector2(813.0001, 390.99997)
 rotation = -3.1415927
 scale = Vector2(0.07667782, -1.2850444)
 
@@ -83,8 +69,38 @@ position = Vector2(-8.952072, 0.14134407)
 scale = Vector2(9.513514, 0.14811787)
 texture = ExtResource("2_8gbba")
 
+[node name="StaticBody2D12" type="StaticBody2D" parent="." unique_id=1520322019]
+position = Vector2(617, 441)
+rotation = -3.1415927
+scale = Vector2(0.07667782, -1.2850444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12" unique_id=921268434]
+position = Vector2(-8.95208, 0.14134407)
+scale = Vector2(58.68, 1)
+shape = SubResource("RectangleShape2D_voe2a")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D12" unique_id=978896475]
+position = Vector2(-8.952072, 0.14134407)
+scale = Vector2(9.513514, 0.14811787)
+texture = ExtResource("2_8gbba")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=1653648274]
+position = Vector2(617, 223.99998)
+rotation = -3.1415927
+scale = Vector2(0.07667782, -1.2850444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=940954436]
+position = Vector2(-8.95208, 0.14134407)
+scale = Vector2(58.68, 1)
+shape = SubResource("RectangleShape2D_voe2a")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D7" unique_id=437490979]
+position = Vector2(-8.952072, 0.14134407)
+scale = Vector2(9.513514, 0.14811787)
+texture = ExtResource("2_8gbba")
+
 [node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=58733238]
-position = Vector2(477, 276)
+position = Vector2(404, 276)
 rotation = -3.1415927
 scale = Vector2(0.07667782, -1.2850444)
 
@@ -94,21 +110,6 @@ scale = Vector2(58.68, 1)
 shape = SubResource("RectangleShape2D_voe2a")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6" unique_id=1583533608]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=1955821698]
-position = Vector2(621, 205.99998)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=859255799]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D7" unique_id=1807107985]
 position = Vector2(-8.952072, 0.14134407)
 scale = Vector2(9.513514, 0.14811787)
 texture = ExtResource("2_8gbba")
@@ -127,7 +128,7 @@ scale = Vector2(9.513514, 0.58811784)
 texture = ExtResource("2_8gbba")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="." unique_id=2033469221]
-position = Vector2(840, 205.99998)
+position = Vector2(812, 223)
 rotation = -3.1415927
 scale = Vector2(0.07667782, -1.2850444)
 
@@ -142,7 +143,7 @@ scale = Vector2(9.513514, 0.14811787)
 texture = ExtResource("2_8gbba")
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="." unique_id=2052994724]
-position = Vector2(1031, 204.99998)
+position = Vector2(1003.00006, 222.99997)
 rotation = -3.1415927
 scale = Vector2(0.07667782, -1.2850444)
 
@@ -162,8 +163,8 @@ rotation = -3.1415927
 scale = Vector2(0.07667782, -19.805042)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11" unique_id=736037464]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
+position = Vector2(-6.520508, 0.34965134)
+scale = Vector2(58.679996, 0.9999999)
 shape = SubResource("RectangleShape2D_voe2a")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D11" unique_id=1214459486]

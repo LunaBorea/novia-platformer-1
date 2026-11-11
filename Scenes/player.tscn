@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://dad5ex1m5wt0a" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://c3dkb7nemm27c" path="res://icon.svg" id="1_v0iea"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_voe2a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(20, 27.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_voe2a"]
 animations = [{
@@ -34,10 +35,12 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=456008934]
 scale = Vector2(2, 2)
+safe_margin = 0.1
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2059485190]
-shape = SubResource("CapsuleShape2D_voe2a")
+position = Vector2(0, 1.25)
+shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1779301196]
 limit_left = 0
