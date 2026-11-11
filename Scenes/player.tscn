@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ccnbt8r1lckqy"]
+
+[ext_resource type="Script" uid="uid://dad5ex1m5wt0a" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://c3dkb7nemm27c" path="res://icon.svg" id="1_v0iea"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_voe2a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_voe2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v0iea")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v0iea")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v0iea")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=456008934]
+scale = Vector2(2, 2)
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2059485190]
+shape = SubResource("CapsuleShape2D_voe2a")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1779301196]
+limit_left = 0
+limit_top = 0
+limit_bottom = 648
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=198986597]
+position = Vector2(0, 1.2500004)
+scale = Vector2(0.155, 0.21484375)
+sprite_frames = SubResource("SpriteFrames_voe2a")
+animation = &"walk"
