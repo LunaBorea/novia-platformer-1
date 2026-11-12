@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://eubwj5pf3nou"]
+
+[ext_resource type="Script" uid="uid://r8bxtbkjrtj" path="res://Scripts/interacting_component.gd" id="1_hkgi3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcss1"]
+radius = 11.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_hkgi3"]
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="InteractingComponent" type="Node2D" unique_id=350070665]
+script = ExtResource("1_hkgi3")
+
+[node name="InteractRange" type="Area2D" parent="." unique_id=746150835]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=1224915704]
+shape = SubResource("CircleShape2D_wcss1")
+
+[node name="InteractLabel" type="Label" parent="." unique_id=882879450]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -47.0
+offset_right = 27.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press F
+"
+label_settings = SubResource("LabelSettings_hkgi3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]

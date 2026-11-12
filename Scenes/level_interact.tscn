@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dttvttcubr8pi"]
+
+[ext_resource type="Script" uid="uid://fuaorowtsxel" path="res://Scripts/level_interact.gd" id="1_ir7ym"]
+[ext_resource type="PackedScene" uid="uid://c1xunchd8e77p" path="res://Scenes/interactable.tscn" id="3_5g0jw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ec6l8"]
+radius = 36.013885
+
+[node name="LevelInteract" type="StaticBody2D" unique_id=1384971656]
+script = ExtResource("1_ir7ym")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=997192183]
+scale = Vector2(0.25, 0.25)
+hframes = 2
+
+[node name="Interactable" parent="." unique_id=1428330449 instance=ExtResource("3_5g0jw")]
+interact_name = "Change Floor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1948169636]
+shape = SubResource("CircleShape2D_ec6l8")
+
+[connection signal="area_entered" from="Interactable" to="." method="_on_interactable_area_entered"]
+[connection signal="area_exited" from="Interactable" to="." method="_on_interactable_area_exited"]

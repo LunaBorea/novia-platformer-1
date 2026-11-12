@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccnbt8r1lckqy"]
 
-[ext_resource type="Script" uid="uid://dad5ex1m5wt0a" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://dad5ex1m5wt0a" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://c3dkb7nemm27c" path="res://icon.svg" id="1_v0iea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
@@ -43,11 +43,13 @@ position = Vector2(0, 1.25)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1779301196]
+position = Vector2(0, -31)
 limit_left = 0
-limit_top = 0
-limit_bottom = 648
+limit_top = -1296
+limit_bottom = 1296
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=198986597]
+modulate = Color(1, 0, 0, 1)
 position = Vector2(0, 1.2500004)
 scale = Vector2(0.155, 0.21484375)
 sprite_frames = SubResource("SpriteFrames_voe2a")

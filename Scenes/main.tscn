@@ -2,172 +2,140 @@
 
 [ext_resource type="PackedScene" uid="uid://ccnbt8r1lckqy" path="res://Scenes/player.tscn" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://c3dkb7nemm27c" path="res://icon.svg" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dxsxpkj1thue8" path="res://Scenes/platform.tscn" id="2_bo1nx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_voe2a"]
-size = Vector2(21.11369, 19.58339)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_id86c"]
 
 [node name="Main" type="Node" unique_id=1288120309]
 
 [node name="CharacterBody2D" parent="." unique_id=456008934 instance=ExtResource("1_bo1nx")]
 position = Vector2(54, 532)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1167867806]
-position = Vector2(573, 613)
+[node name="Platform" parent="." unique_id=1916064717 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(160, 628)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1819819049]
-position = Vector2(-0.1351242, 0.63952637)
-scale = Vector2(58.68, 3.8400028)
-shape = SubResource("RectangleShape2D_voe2a")
+[node name="Platform2" parent="." unique_id=706576855 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(480, 628)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=623660726]
-position = Vector2(0.8648758, 0.639534)
-scale = Vector2(9.513514, 0.58811784)
+[node name="Platform3" parent="." unique_id=19768510 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(800, 628)
+
+[node name="Platform7" parent="." unique_id=628101098 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(2091, 628)
+
+[node name="Platform8" parent="." unique_id=2049744601 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(2411, 628)
+
+[node name="Platform9" parent="." unique_id=1640726102 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(470, 487.00003)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform13" parent="." unique_id=1482474686 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1020.0001, 374)
+scale = Vector2(0.67999756, 14.307214)
+
+[node name="Platform10" parent="." unique_id=14509958 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(798, 417.00003)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform27" parent="." unique_id=1340804295 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(671, -1)
+scale = Vector2(0.16166101, 8.615973)
+
+[node name="Platform15" parent="." unique_id=1578790096 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1728, 78)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform23" parent="." unique_id=1186625478 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1728, 906.99994)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform24" parent="." unique_id=1719320175 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(2167, 906.99994)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform25" parent="." unique_id=671909272 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(2634.0002, 907)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform19" parent="." unique_id=1307187880 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1563.0001, 295)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform20" parent="." unique_id=1806184034 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1819, 511)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform21" parent="." unique_id=1705023594 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1565, 693)
+scale = Vector2(0.67999756, 1)
+
+[node name="Platform26" parent="." unique_id=433278858 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(2758, 611.00006)
+scale = Vector2(0.10879955, 7.7600026)
+
+[node name="Platform28" type="StaticBody2D" parent="." unique_id=1067159073]
+position = Vector2(2263.0002, 482)
+scale = Vector2(0.13599943, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform28" unique_id=1358615246]
+scale = Vector2(16, 2)
+shape = SubResource("RectangleShape2D_id86c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform28" unique_id=1109362471]
+modulate = Color(1, 0.88566667, 0.01999998, 1)
+position = Vector2(2.9802322e-06, 0)
+scale = Vector2(2.5, 0.32000017)
 texture = ExtResource("2_8gbba")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=945376730]
-position = Vector2(473.00006, 501.99994)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
+[node name="Platform14" parent="." unique_id=2006075621 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1206.0001, 78)
+scale = Vector2(1.8767934, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1020328200]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
+[node name="Platform16" parent="." unique_id=585759947 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1025.0001, -151)
+scale = Vector2(1.8767934, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1607472806]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
+[node name="Platform17" parent="." unique_id=1574669664 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1628, -151)
+scale = Vector2(1.8767934, 1)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=453357111]
-position = Vector2(813.0001, 390.99997)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
+[node name="Platform11" parent="." unique_id=98114837 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(890, 227.00002)
+scale = Vector2(0.10879955, 8.400002)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1029306947]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
+[node name="Platform12" parent="." unique_id=1353153215 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(707, 43.999996)
+scale = Vector2(0.10879955, 10.751991)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=1646798533]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
+[node name="Platform18" parent="." unique_id=2139949143 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1947.0001, 43.999996)
+scale = Vector2(0.10879955, 10.751991)
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=881288972]
-position = Vector2(617, 333)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=2060608190]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5" unique_id=320057905]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
-
-[node name="StaticBody2D12" type="StaticBody2D" parent="." unique_id=1520322019]
-position = Vector2(617, 441)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12" unique_id=921268434]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D12" unique_id=978896475]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=1653648274]
-position = Vector2(617, 223.99998)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=940954436]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D7" unique_id=437490979]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=58733238]
-position = Vector2(404, 276)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=37230876]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6" unique_id=1583533608]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=1183983370]
-position = Vector2(1744, 613)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=543396699]
-position = Vector2(-0.1351242, 0.63952637)
-scale = Vector2(58.68, 3.8400028)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D8" unique_id=475484288]
-position = Vector2(0.8648758, 0.639534)
-scale = Vector2(9.513514, 0.58811784)
-texture = ExtResource("2_8gbba")
-
-[node name="StaticBody2D9" type="StaticBody2D" parent="." unique_id=2033469221]
-position = Vector2(812, 223)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" unique_id=2117318008]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D9" unique_id=1329357493]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
-
-[node name="StaticBody2D10" type="StaticBody2D" parent="." unique_id=2052994724]
-position = Vector2(1003.00006, 222.99997)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -1.2850444)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" unique_id=469710687]
-position = Vector2(-8.95208, 0.14134407)
-scale = Vector2(58.68, 1)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D10" unique_id=510237702]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
-
-[node name="StaticBody2D11" type="StaticBody2D" parent="." unique_id=693067827]
-position = Vector2(1146, 431.00006)
-rotation = -3.1415927
-scale = Vector2(0.07667782, -19.805042)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11" unique_id=736037464]
-position = Vector2(-6.520508, 0.34965134)
-scale = Vector2(58.679996, 0.9999999)
-shape = SubResource("RectangleShape2D_voe2a")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D11" unique_id=1214459486]
-position = Vector2(-8.952072, 0.14134407)
-scale = Vector2(9.513514, 0.14811787)
-texture = ExtResource("2_8gbba")
+[node name="Platform22" parent="." unique_id=2130630719 instance=ExtResource("2_bo1nx")]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+position = Vector2(1947.0001, 414.00003)
+scale = Vector2(0.10879955, 10.751991)
