@@ -7,7 +7,7 @@ func _ready():
 	interactable.interact = _on_interact
 
 func _on_interact():
-	return
+	get_tree().paused = true
 
 func _on_interactable_area_entered(_area):
 	sprite_2d.frame = 1

@@ -14,7 +14,7 @@ scale = Vector2(0.25, 0.25)
 hframes = 2
 
 [node name="Interactable" parent="." unique_id=1428330449 instance=ExtResource("3_5g0jw")]
-interact_name = "Change Floor"
+interact_name = "Press F"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1948169636]
 shape = SubResource("CircleShape2D_ec6l8")

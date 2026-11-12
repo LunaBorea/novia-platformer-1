@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dad5ex1m5wt0a" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://c3dkb7nemm27c" path="res://icon.svg" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://eubwj5pf3nou" path="res://Scenes/interacting_component.tscn" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(20, 27.5)
@@ -54,3 +55,5 @@ position = Vector2(0, 1.2500004)
 scale = Vector2(0.155, 0.21484375)
 sprite_frames = SubResource("SpriteFrames_voe2a")
 animation = &"walk"
+
+[node name="InteractingComponent" parent="." unique_id=350070665 instance=ExtResource("3_6t5aa")]
