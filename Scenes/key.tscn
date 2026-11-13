@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://di3yt44c00c3a"]
+
+[ext_resource type="Script" uid="uid://fuaorowtsxel" path="res://Scripts/level_interact.gd" id="1_brn0f"]
+[ext_resource type="Texture2D" uid="uid://c8b6rpob6e76g" path="res://Assets/key.png" id="2_brn0f"]
+[ext_resource type="PackedScene" uid="uid://c1xunchd8e77p" path="res://Scenes/interactable.tscn" id="2_lc1k7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ec6l8"]
+radius = 36.013885
+
+[node name="Key" type="Node2D" unique_id=1821336166]
+
+[node name="LevelInteract" type="StaticBody2D" parent="." unique_id=1384971656]
+script = ExtResource("1_brn0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelInteract" unique_id=997192183]
+scale = Vector2(0.25, 0.25)
+hframes = 2
+
+[node name="Interactable" parent="LevelInteract" unique_id=1428330449 instance=ExtResource("2_lc1k7")]
+interact_name = "F to Pick Up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelInteract/Interactable" unique_id=1948169636]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ec6l8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070539325]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_brn0f")
+
+[connection signal="area_entered" from="LevelInteract/Interactable" to="LevelInteract" method="_on_interactable_area_entered"]
+[connection signal="area_exited" from="LevelInteract/Interactable" to="LevelInteract" method="_on_interactable_area_exited"]

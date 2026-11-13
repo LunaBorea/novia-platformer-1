@@ -1,169 +1,1124 @@
 [gd_scene format=3 uid="uid://b4qjuag37e7de"]
 
 [ext_resource type="PackedScene" uid="uid://ccnbt8r1lckqy" path="res://Scenes/player.tscn" id="1_bo1nx"]
-[ext_resource type="Texture2D" uid="uid://c3dkb7nemm27c" path="res://icon.svg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dxsxpkj1thue8" path="res://Scenes/platform.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://w57gj4x3jwdf" path="res://Scenes/spike.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://fuaorowtsxel" path="res://Scripts/level_interact.gd" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://c1xunchd8e77p" path="res://Scenes/interactable.tscn" id="4_21xkr"]
+[ext_resource type="PackedScene" uid="uid://4vl3v84d02i0" path="res://Scenes/slope.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://bw6w273vcd5jc" path="res://Scripts/spike.gd" id="5_hptm8"]
+[ext_resource type="Texture2D" uid="uid://cabsrmatra2l0" path="res://Assets/lock.png" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://bv53rboqwnrsq" path="res://Scripts/interactable.gd" id="6_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://c8b6rpob6e76g" path="res://Assets/key.png" id="8_hptm8"]
+[ext_resource type="Texture2D" uid="uid://dr5igybxip57a" path="res://Assets/lunaborea.png" id="11_d1ilt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_id86c"]
+size = Vector2(4, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77j3x"]
+size = Vector2(40, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_voe2a"]
+size = Vector2(74, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hptm8"]
+size = Vector2(4, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ec6l8"]
 radius = 36.013885
 
+[sub_resource type="LabelSettings" id="LabelSettings_6iyac"]
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node" unique_id=1288120309]
 
-[node name="CharacterBody2D" parent="." unique_id=456008934 instance=ExtResource("1_bo1nx")]
-position = Vector2(83, 531)
+[node name="Player" parent="." unique_id=456008934 instance=ExtResource("1_bo1nx")]
+unique_name_in_owner = true
+position = Vector2(112, 508)
 
-[node name="Platform" parent="." unique_id=1916064717 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(160, 628)
+[node name="Level" type="Node2D" parent="." unique_id=1057792984]
 
-[node name="Platform2" parent="." unique_id=706576855 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(480, 628)
+[node name="Platform" parent="Level" unique_id=1916064717 instance=ExtResource("2_bo1nx")]
+position = Vector2(32, 672)
+scale = Vector2(8, 1)
 
-[node name="Platform3" parent="." unique_id=19768510 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(800, 628)
+[node name="Platform26" parent="Level" unique_id=1568283911 instance=ExtResource("2_bo1nx")]
+modulate = Color(1.8439054, 0.6031418, 1.8207804, 1)
+position = Vector2(32, 544)
+scale = Vector2(0.5, 3.5)
 
-[node name="Platform7" parent="." unique_id=628101098 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(2089, 628)
+[node name="Platform3" parent="Level" unique_id=1704492580 instance=ExtResource("2_bo1nx")]
+position = Vector2(544, 992)
+scale = Vector2(14, 1)
 
-[node name="Platform8" parent="." unique_id=2049744601 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(2409, 628)
+[node name="Platform17" parent="Level" unique_id=1379048629 instance=ExtResource("2_bo1nx")]
+position = Vector2(1824.0001, 1888)
+scale = Vector2(18.5, 1.5)
 
-[node name="Platform9" parent="." unique_id=1640726102 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(470, 487.00003)
-scale = Vector2(0.67999756, 1)
+[node name="Platform38" parent="Level" unique_id=1625289010 instance=ExtResource("2_bo1nx")]
+position = Vector2(3840, 2400)
+scale = Vector2(23.5, 1.5)
 
-[node name="Platform29" parent="." unique_id=439264307 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.7166667, 0, 1, 1)
-position = Vector2(14.999999, 521)
-scale = Vector2(0.108800314, 4.16)
+[node name="Platform39" parent="Level" unique_id=500329191 instance=ExtResource("2_bo1nx")]
+position = Vector2(3840, 2304)
+scale = Vector2(1, 9)
 
-[node name="Platform13" parent="." unique_id=1482474686 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1015.00006, 359)
-scale = Vector2(0.67999756, 14.307214)
+[node name="Platform43" parent="Level" unique_id=2113140098 instance=ExtResource("2_bo1nx")]
+position = Vector2(4352, 2256)
+scale = Vector2(1, 0.5)
 
-[node name="Platform10" parent="." unique_id=14509958 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(798, 417.00003)
-scale = Vector2(0.67999756, 1)
+[node name="Platform44" parent="Level" unique_id=1388004604 instance=ExtResource("2_bo1nx")]
+position = Vector2(4092, 2256)
+scale = Vector2(1, 0.5)
 
-[node name="Platform27" parent="." unique_id=1340804295 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(671, -1)
-scale = Vector2(0.16166101, 8.615973)
+[node name="Platform18" parent="Level" unique_id=1752102424 instance=ExtResource("2_bo1nx")]
+position = Vector2(1824.0001, 1792)
+scale = Vector2(2.5, 1.5)
 
-[node name="Platform15" parent="." unique_id=1578790096 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1728, 78)
-scale = Vector2(0.67999756, 1)
+[node name="Platform34" parent="Level" unique_id=272749976 instance=ExtResource("2_bo1nx")]
+position = Vector2(1728, 1664)
+scale = Vector2(0.5, 0.5)
 
-[node name="Platform23" parent="." unique_id=1186625478 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1728, 906.99994)
-scale = Vector2(0.67999756, 1)
+[node name="Platform11" parent="Level" unique_id=303951994 instance=ExtResource("2_bo1nx")]
+position = Vector2(4416, -224)
+rotation = 3.1415927
+scale = Vector2(40, 1)
 
-[node name="Platform24" parent="." unique_id=1719320175 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(2167, 906.99994)
-scale = Vector2(0.67999756, 1)
+[node name="Platform23" parent="Level" unique_id=840998706 instance=ExtResource("2_bo1nx")]
+position = Vector2(32, 320)
+scale = Vector2(21, 1)
 
-[node name="Platform25" parent="." unique_id=671909272 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(2634.0002, 907)
-scale = Vector2(0.67999756, 1)
+[node name="Platform48" parent="Level" unique_id=1340071808 instance=ExtResource("2_bo1nx")]
+position = Vector2(4416, 1904)
+scale = Vector2(14.5, 1)
 
-[node name="Platform19" parent="." unique_id=1307187880 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1563.0001, 295)
-scale = Vector2(0.67999756, 1)
+[node name="Platform49" parent="Level" unique_id=1098023006 instance=ExtResource("2_bo1nx")]
+position = Vector2(4384, 32)
+scale = Vector2(10, 1)
 
-[node name="Platform20" parent="." unique_id=1806184034 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1819, 511)
-scale = Vector2(0.67999756, 1)
+[node name="Platform54" parent="Level" unique_id=1880801103 instance=ExtResource("2_bo1nx")]
+position = Vector2(5024, 96)
+scale = Vector2(4, 1)
 
-[node name="Platform21" parent="." unique_id=1705023594 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1565, 693)
-scale = Vector2(0.67999756, 1)
+[node name="Platform56" parent="Level" unique_id=121461045 instance=ExtResource("2_bo1nx")]
+position = Vector2(5280, 32)
+scale = Vector2(0.5, 4)
 
-[node name="Platform26" parent="." unique_id=433278858 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(2758, 611.00006)
-scale = Vector2(0.10879955, 7.7600026)
+[node name="Platform59" parent="Level" unique_id=43325392 instance=ExtResource("2_bo1nx")]
+position = Vector2(5312, 32)
+scale = Vector2(0.5, 4)
 
-[node name="Platform28" type="StaticBody2D" parent="." unique_id=1067159073]
-position = Vector2(2252.0002, 528)
-scale = Vector2(0.13599943, 1)
+[node name="Platform57" parent="Level" unique_id=98002780 instance=ExtResource("2_bo1nx")]
+position = Vector2(3424, 544)
+scale = Vector2(1, 6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform28" unique_id=1358615246]
-scale = Vector2(16, 2)
+[node name="Platform55" parent="Level" unique_id=1169227506 instance=ExtResource("2_bo1nx")]
+position = Vector2(5280, -288)
+rotation = 3.1415927
+scale = Vector2(4, 1)
+
+[node name="Platform50" parent="Level" unique_id=107237660 instance=ExtResource("2_bo1nx")]
+position = Vector2(4384, -160)
+scale = Vector2(10, 1)
+
+[node name="Platform2" parent="Level" unique_id=434547413 instance=ExtResource("2_bo1nx")]
+position = Vector2(480, 992)
+scale = Vector2(1, 5)
+
+[node name="Platform25" parent="Level" unique_id=1087298436 instance=ExtResource("2_bo1nx")]
+position = Vector2(0, 672.00006)
+scale = Vector2(0.5, 6.5)
+
+[node name="Platform42" parent="Level" unique_id=1489111991 instance=ExtResource("2_bo1nx")]
+position = Vector2(5344, 1952)
+rotation = -3.1415927
+scale = Vector2(0.5, 5.5)
+
+[node name="Platform51" parent="Level" unique_id=771350161 instance=ExtResource("2_bo1nx")]
+modulate = Color(1.8263525, 2.8230593, 0.6137781, 1)
+position = Vector2(5344, 1952)
+scale = Vector2(0.5, 40)
+
+[node name="Platform4" parent="Level" unique_id=1933946136 instance=ExtResource("2_bo1nx")]
+position = Vector2(1376, 928.00006)
+scale = Vector2(1, 5)
+
+[node name="Platform30" parent="Level" unique_id=92346313 instance=ExtResource("2_bo1nx")]
+position = Vector2(1984, 0)
+scale = Vector2(1, 2.5)
+
+[node name="Platform9" parent="Level" unique_id=1884099750 instance=ExtResource("2_bo1nx")]
+position = Vector2(1376, 1632)
+scale = Vector2(1, 10)
+
+[node name="Platform14" parent="Level" unique_id=1100992564 instance=ExtResource("2_bo1nx")]
+position = Vector2(1760, 2272)
+scale = Vector2(1, 10)
+
+[node name="Platform15" parent="Level" unique_id=484445195 instance=ExtResource("2_bo1nx")]
+position = Vector2(1376, 2272)
+scale = Vector2(1, 10)
+
+[node name="Platform16" parent="Level" unique_id=827488937 instance=ExtResource("2_bo1nx")]
+position = Vector2(1376.0001, 2336)
+scale = Vector2(7, 1)
+
+[node name="Platform60" parent="Level" unique_id=1535125828 instance=ExtResource("2_bo1nx")]
+position = Vector2(1408.0001, -160)
+scale = Vector2(7, 1)
+
+[node name="Platform10" parent="Level" unique_id=522982290 instance=ExtResource("2_bo1nx")]
+position = Vector2(1760, 1440)
+scale = Vector2(1, 20)
+
+[node name="Platform6" parent="Level" unique_id=722475179 instance=ExtResource("2_bo1nx")]
+position = Vector2(1376, 416)
+scale = Vector2(1, 10)
+
+[node name="Platform5" parent="Level" unique_id=2048977416 instance=ExtResource("2_bo1nx")]
+position = Vector2(1440, 672)
+
+[node name="Platform13" parent="Level" unique_id=1996396259 instance=ExtResource("2_bo1nx")]
+position = Vector2(544, 928)
+scale = Vector2(1.5, 1.5)
+
+[node name="Platform12" parent="Level" unique_id=1667111520 instance=ExtResource("2_bo1nx")]
+position = Vector2(1824, 224)
+scale = Vector2(12, 1)
+
+[node name="Platform7" parent="Level" unique_id=714653688 instance=ExtResource("2_bo1nx")]
+position = Vector2(736, 672)
+scale = Vector2(2, 1)
+
+[node name="Platform24" parent="Level" unique_id=343447843 instance=ExtResource("2_bo1nx")]
+position = Vector2(32, 608)
+scale = Vector2(2, 1)
+
+[node name="Platform8" parent="Level" unique_id=154125114 instance=ExtResource("2_bo1nx")]
+position = Vector2(1056, 672)
+scale = Vector2(2, 1)
+
+[node name="Spike" parent="Level" unique_id=1267736101 instance=ExtResource("3_8gbba")]
+position = Vector2(1376, 688)
+rotation = -1.5707964
+
+[node name="Spike51" parent="Level" unique_id=1476865186 instance=ExtResource("3_8gbba")]
+position = Vector2(2848, 160)
+
+[node name="Spike52" parent="Level" unique_id=403297418 instance=ExtResource("3_8gbba")]
+position = Vector2(3168, 160)
+
+[node name="Spike2" parent="Level" unique_id=1214495667 instance=ExtResource("3_8gbba")]
+position = Vector2(1376, 720)
+rotation = -1.5707964
+
+[node name="Spike43" parent="Level" unique_id=237987930 instance=ExtResource("3_8gbba")]
+position = Vector2(2320, 1792)
+
+[node name="Spike44" parent="Level" unique_id=114432815 instance=ExtResource("3_8gbba")]
+position = Vector2(2288, 1792)
+
+[node name="Spike45" parent="Level" unique_id=1920984070 instance=ExtResource("3_8gbba")]
+position = Vector2(2512, 1792)
+
+[node name="Spike46" parent="Level" unique_id=1172838835 instance=ExtResource("3_8gbba")]
+position = Vector2(2480, 1792)
+
+[node name="Spike53" parent="Level" unique_id=975836086 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 272)
+rotation = 1.5707964
+
+[node name="Spike54" parent="Level" unique_id=198831128 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 240)
+rotation = 1.5707964
+
+[node name="Spike56" parent="Level" unique_id=1117194268 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 336)
+rotation = 1.5707964
+
+[node name="Spike57" parent="Level" unique_id=1259956014 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 304)
+rotation = 1.5707964
+
+[node name="Spike58" parent="Level" unique_id=1138318294 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 400)
+rotation = 1.5707964
+
+[node name="Spike59" parent="Level" unique_id=1312542808 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 368)
+rotation = 1.5707964
+
+[node name="Spike60" parent="Level" unique_id=1753867397 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 464)
+rotation = 1.5707964
+
+[node name="Spike61" parent="Level" unique_id=3156650 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 432)
+rotation = 1.5707964
+
+[node name="Spike139" parent="Level" unique_id=2070969351 instance=ExtResource("3_8gbba")]
+position = Vector2(4144, 624)
+rotation = 1.5707964
+
+[node name="Spike64" parent="Level" unique_id=64280085 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 272)
+rotation = -1.5707964
+
+[node name="Spike65" parent="Level" unique_id=1697019575 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 240)
+rotation = -1.5707964
+
+[node name="Spike66" parent="Level" unique_id=820504004 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 336)
+rotation = -1.5707964
+
+[node name="Spike67" parent="Level" unique_id=1035431208 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 304)
+rotation = -1.5707964
+
+[node name="Spike68" parent="Level" unique_id=1652307895 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 400)
+rotation = -1.5707964
+
+[node name="Spike69" parent="Level" unique_id=384431055 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 368)
+rotation = -1.5707964
+
+[node name="Spike70" parent="Level" unique_id=726827604 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 464)
+rotation = -1.5707964
+
+[node name="Spike71" parent="Level" unique_id=239440797 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 432)
+rotation = -1.5707964
+
+[node name="Spike72" parent="Level" unique_id=1401789651 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 976)
+rotation = 1.5707964
+
+[node name="Spike73" parent="Level" unique_id=1262084419 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 944)
+rotation = 1.5707964
+
+[node name="Spike74" parent="Level" unique_id=96542278 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1040)
+rotation = 1.5707964
+
+[node name="Spike75" parent="Level" unique_id=1106926741 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1008)
+rotation = 1.5707964
+
+[node name="Spike76" parent="Level" unique_id=832521478 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1104)
+rotation = 1.5707964
+
+[node name="Spike77" parent="Level" unique_id=818122138 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1072)
+rotation = 1.5707964
+
+[node name="Spike78" parent="Level" unique_id=1100087528 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1168)
+rotation = 1.5707964
+
+[node name="Spike79" parent="Level" unique_id=287599372 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1136)
+rotation = 1.5707964
+
+[node name="Spike80" parent="Level" unique_id=1950126370 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 976)
+rotation = -1.5707964
+
+[node name="Spike81" parent="Level" unique_id=2008416076 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 944)
+rotation = -1.5707964
+
+[node name="Spike82" parent="Level" unique_id=1696264560 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1040)
+rotation = -1.5707964
+
+[node name="Spike83" parent="Level" unique_id=974951069 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1008)
+rotation = -1.5707964
+
+[node name="Spike84" parent="Level" unique_id=1104855345 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1104)
+rotation = -1.5707964
+
+[node name="Spike85" parent="Level" unique_id=1894341661 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1072)
+rotation = -1.5707964
+
+[node name="Spike86" parent="Level" unique_id=1834346370 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1168)
+rotation = -1.5707964
+
+[node name="Spike87" parent="Level" unique_id=1071250695 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1136)
+rotation = -1.5707964
+
+[node name="Spike88" parent="Level" unique_id=1991488343 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1680)
+rotation = 1.5707964
+
+[node name="Spike89" parent="Level" unique_id=92429457 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1648)
+rotation = 1.5707964
+
+[node name="Spike90" parent="Level" unique_id=221588530 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1744)
+rotation = 1.5707964
+
+[node name="Spike91" parent="Level" unique_id=1978463900 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1712)
+rotation = 1.5707964
+
+[node name="Spike92" parent="Level" unique_id=1476554929 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1808)
+rotation = 1.5707964
+
+[node name="Spike93" parent="Level" unique_id=1551242684 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1776)
+rotation = 1.5707964
+
+[node name="Spike94" parent="Level" unique_id=2053300789 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1872)
+rotation = 1.5707964
+
+[node name="Spike95" parent="Level" unique_id=532287300 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 1840)
+rotation = 1.5707964
+
+[node name="Spike96" parent="Level" unique_id=801162999 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1680)
+rotation = -1.5707964
+
+[node name="Spike97" parent="Level" unique_id=153094830 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1648)
+rotation = -1.5707964
+
+[node name="Spike98" parent="Level" unique_id=2066758304 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1744)
+rotation = -1.5707964
+
+[node name="Spike99" parent="Level" unique_id=1629505601 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1712)
+rotation = -1.5707964
+
+[node name="Spike100" parent="Level" unique_id=2089261460 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1808)
+rotation = -1.5707964
+
+[node name="Spike101" parent="Level" unique_id=2082177620 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1776)
+rotation = -1.5707964
+
+[node name="Spike102" parent="Level" unique_id=1692240115 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1872)
+rotation = -1.5707964
+
+[node name="Spike103" parent="Level" unique_id=690267678 instance=ExtResource("3_8gbba")]
+position = Vector2(4352, 1840)
+rotation = -1.5707964
+
+[node name="Spike138" parent="Level" unique_id=1347168296 instance=ExtResource("3_8gbba")]
+position = Vector2(4112, 624)
+rotation = -1.5707964
+
+[node name="Spike141" parent="Level" unique_id=1486285239 instance=ExtResource("3_8gbba")]
+position = Vector2(4144, 112)
+rotation = 1.5707964
+
+[node name="Spike142" parent="Level" unique_id=2139299113 instance=ExtResource("3_8gbba")]
+position = Vector2(4112, 112)
+rotation = -1.5707964
+
+[node name="Spike135" parent="Level" unique_id=1917770983 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 2224)
+rotation = 1.5707964
+
+[node name="Spike137" parent="Level" unique_id=1224487885 instance=ExtResource("3_8gbba")]
+position = Vector2(3904, 2256)
+rotation = 1.5707964
+
+[node name="Spike55" parent="Level" unique_id=8950752 instance=ExtResource("3_8gbba")]
+position = Vector2(4128, 96)
+
+[node name="Spike140" parent="Level" unique_id=801589703 instance=ExtResource("3_8gbba")]
+position = Vector2(4128, 640)
+rotation = 3.1415927
+
+[node name="Spike47" parent="Level" unique_id=119175465 instance=ExtResource("3_8gbba")]
+position = Vector2(2320, 1600)
+rotation = -3.1415927
+
+[node name="Spike48" parent="Level" unique_id=679941401 instance=ExtResource("3_8gbba")]
+position = Vector2(2288, 1600)
+rotation = -3.1415927
+
+[node name="Spike49" parent="Level" unique_id=589691058 instance=ExtResource("3_8gbba")]
+position = Vector2(2512, 1600)
+rotation = -3.1415927
+
+[node name="Spike50" parent="Level" unique_id=1445593407 instance=ExtResource("3_8gbba")]
+position = Vector2(2480, 1600)
+rotation = -3.1415927
+
+[node name="Slope" parent="Level" unique_id=1082057586 instance=ExtResource("4_jjvhh")]
+position = Vector2(640, 928)
+scale = Vector2(6, 3)
+
+[node name="Platform31" parent="Level" unique_id=2056352915 instance=ExtResource("2_bo1nx")]
+position = Vector2(2592, 544)
+scale = Vector2(13, 1)
+
+[node name="Platform58" parent="Level" unique_id=1413612732 instance=ExtResource("2_bo1nx")]
+position = Vector2(3488, 224)
+scale = Vector2(5.5, 1)
+
+[node name="Platform32" parent="Level" unique_id=928122030 instance=ExtResource("2_bo1nx")]
+position = Vector2(2528, 544)
+scale = Vector2(1, 5)
+
+[node name="Platform45" parent="Level" unique_id=529256924 instance=ExtResource("2_bo1nx")]
+position = Vector2(4112, 640)
+scale = Vector2(0.5, 8.5)
+
+[node name="Spike143" parent="Level" unique_id=396782794 instance=ExtResource("3_8gbba")]
+position = Vector2(4144, 1328)
+rotation = 1.5707964
+
+[node name="Spike144" parent="Level" unique_id=365181861 instance=ExtResource("3_8gbba")]
+position = Vector2(4112, 1328)
+rotation = -1.5707964
+
+[node name="Spike145" parent="Level" unique_id=36759609 instance=ExtResource("3_8gbba")]
+position = Vector2(4144, 816)
+rotation = 1.5707964
+
+[node name="Spike146" parent="Level" unique_id=1086781497 instance=ExtResource("3_8gbba")]
+position = Vector2(4112, 816)
+rotation = -1.5707964
+
+[node name="Spike62" parent="Level" unique_id=698881054 instance=ExtResource("3_8gbba")]
+position = Vector2(4128, 800)
+
+[node name="Spike147" parent="Level" unique_id=1639971556 instance=ExtResource("3_8gbba")]
+position = Vector2(4128, 1344)
+rotation = 3.1415927
+
+[node name="Platform46" parent="Level" unique_id=1063233873 instance=ExtResource("2_bo1nx")]
+position = Vector2(4112, 1344)
+scale = Vector2(0.5, 8.5)
+
+[node name="Spike148" parent="Level" unique_id=2060327633 instance=ExtResource("3_8gbba")]
+position = Vector2(4144, 2032)
+rotation = 1.5707964
+
+[node name="Spike149" parent="Level" unique_id=927200893 instance=ExtResource("3_8gbba")]
+position = Vector2(4112, 2032)
+rotation = -1.5707964
+
+[node name="Spike150" parent="Level" unique_id=716585171 instance=ExtResource("3_8gbba")]
+position = Vector2(4144, 1520)
+rotation = 1.5707964
+
+[node name="Spike151" parent="Level" unique_id=1115187051 instance=ExtResource("3_8gbba")]
+position = Vector2(4112, 1520)
+rotation = -1.5707964
+
+[node name="Spike63" parent="Level" unique_id=840877895 instance=ExtResource("3_8gbba")]
+position = Vector2(4128, 1504)
+
+[node name="Platform47" parent="Level" unique_id=1287286365 instance=ExtResource("2_bo1nx")]
+position = Vector2(4112, 2048)
+scale = Vector2(0.5, 8.5)
+
+[node name="Spike116" parent="Level" unique_id=916813030 instance=ExtResource("3_8gbba")]
+position = Vector2(3952, 2304)
+
+[node name="Spike117" parent="Level" unique_id=1404324502 instance=ExtResource("3_8gbba")]
+position = Vector2(3984, 2304)
+
+[node name="Spike118" parent="Level" unique_id=1798484172 instance=ExtResource("3_8gbba")]
+position = Vector2(4016, 2304)
+
+[node name="Spike119" parent="Level" unique_id=1736622305 instance=ExtResource("3_8gbba")]
+position = Vector2(4048, 2304)
+
+[node name="Spike120" parent="Level" unique_id=2108552598 instance=ExtResource("3_8gbba")]
+position = Vector2(4080, 2304)
+
+[node name="Spike121" parent="Level" unique_id=1561056112 instance=ExtResource("3_8gbba")]
+position = Vector2(4112, 2304)
+
+[node name="Spike122" parent="Level" unique_id=37498666 instance=ExtResource("3_8gbba")]
+position = Vector2(4144, 2304)
+
+[node name="Spike123" parent="Level" unique_id=1602891187 instance=ExtResource("3_8gbba")]
+position = Vector2(4176, 2304)
+
+[node name="Spike124" parent="Level" unique_id=1642520995 instance=ExtResource("3_8gbba")]
+position = Vector2(4208, 2304)
+
+[node name="Spike125" parent="Level" unique_id=1679532792 instance=ExtResource("3_8gbba")]
+position = Vector2(4240, 2304)
+
+[node name="Spike126" parent="Level" unique_id=726696 instance=ExtResource("3_8gbba")]
+position = Vector2(4272, 2304)
+
+[node name="Spike127" parent="Level" unique_id=1042681412 instance=ExtResource("3_8gbba")]
+position = Vector2(4304, 2304)
+
+[node name="Spike128" parent="Level" unique_id=723835754 instance=ExtResource("3_8gbba")]
+position = Vector2(4336, 2304)
+
+[node name="Spike129" parent="Level" unique_id=1395135425 instance=ExtResource("3_8gbba")]
+position = Vector2(4368, 2304)
+
+[node name="Spike130" parent="Level" unique_id=1935607411 instance=ExtResource("3_8gbba")]
+position = Vector2(4400, 2304)
+
+[node name="Platform33" parent="Level" unique_id=859441124 instance=ExtResource("2_bo1nx")]
+position = Vector2(3840, 1728)
+scale = Vector2(1, 24.5)
+
+[node name="Platform37" parent="Level" unique_id=1764779002 instance=ExtResource("2_bo1nx")]
+position = Vector2(4352, 2048)
+scale = Vector2(1, 32.5)
+
+[node name="Platform35" parent="Level" unique_id=2009652943 instance=ExtResource("2_bo1nx")]
+position = Vector2(2768, 224)
+scale = Vector2(2.5, 1)
+
+[node name="Platform36" parent="Level" unique_id=1983733290 instance=ExtResource("2_bo1nx")]
+position = Vector2(3088.0002, 224)
+scale = Vector2(2.5, 1)
+
+[node name="Lava" type="Node2D" parent="Level" unique_id=130685564]
+position = Vector2(3024, 480)
+script = ExtResource("5_hptm8")
+
+[node name="Polygon2D" type="Polygon2D" parent="Level/Lava" unique_id=1188312285]
+scale = Vector2(1, 2.6666667)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(400, 0, -432, 0, -432, -36, 400, -36)
+
+[node name="Area2D" type="Area2D" parent="Level/Lava" unique_id=1808329920]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Lava/Area2D" unique_id=1868835252]
+polygon = PackedVector2Array(400, 0, -432, 0, -432, -96, 400, -96)
+
+[node name="Slope10" parent="Level" unique_id=1216306010 instance=ExtResource("4_jjvhh")]
+position = Vector2(160, 608)
+scale = Vector2(5, 2)
+
+[node name="Platform40" type="StaticBody2D" parent="Level" unique_id=2005379408]
+modulate = Color(1.8439054, 0.6031418, 1.8207804, 1)
+position = Vector2(5280, 2240)
+scale = Vector2(0.5, 3.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform40" unique_id=1358615246]
+position = Vector2(48, -32)
+scale = Vector2(7.6800003, 2)
 shape = SubResource("RectangleShape2D_id86c")
+debug_color = Color(0.7776924, 0.43633378, 0.14138988, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="Platform28" unique_id=1109362471]
-modulate = Color(1, 0.88566667, 0.01999998, 1)
-position = Vector2(2.9802322e-06, 0)
-scale = Vector2(2.5, 0.32000017)
-texture = ExtResource("2_8gbba")
+[node name="Area2D" type="Area2D" parent="Level/Platform40" unique_id=1739508728]
 
-[node name="Platform14" parent="." unique_id=2006075621 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1206.0001, 78)
-scale = Vector2(1.8767934, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform40/Area2D" unique_id=1476169993]
+position = Vector2(12, -27)
+shape = SubResource("RectangleShape2D_77j3x")
 
-[node name="Platform16" parent="." unique_id=585759947 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1025, -152)
-scale = Vector2(1.8767934, 1)
+[node name="ColorRect" type="ColorRect" parent="Level/Platform40" unique_id=269154377]
+offset_top = -64.0
+offset_right = 8.0
+scale = Vector2(8, 1)
+color = Color(0.24477637, 0.2447764, 0.24477637, 1)
 
-[node name="Platform17" parent="." unique_id=1574669664 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1627.9999, -152)
-scale = Vector2(1.8767934, 1)
+[node name="Platform41" parent="Level" unique_id=1338117309 instance=ExtResource("2_bo1nx")]
+position = Vector2(5184, 2304)
+scale = Vector2(2, 1)
 
-[node name="Platform11" parent="." unique_id=98114837 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(890, 227.00002)
-scale = Vector2(0.10879955, 8.400002)
+[node name="Platform52" parent="Level" unique_id=1031503734 instance=ExtResource("2_bo1nx")]
+position = Vector2(5184, 1968)
+scale = Vector2(2.5, 1)
 
-[node name="Platform12" parent="." unique_id=1353153215 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(707, 42)
-scale = Vector2(0.10879955, 10.751991)
+[node name="Platform53" parent="Level" unique_id=409166466 instance=ExtResource("2_bo1nx")]
+position = Vector2(5280, 2016)
+scale = Vector2(0.5, 1)
 
-[node name="Platform18" parent="." unique_id=2139949143 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1946, 43)
-scale = Vector2(0.10879955, 10.751991)
+[node name="Slope12" parent="Level" unique_id=1630188392 instance=ExtResource("4_jjvhh")]
+position = Vector2(5184, 2304.0002)
+rotation = -1.5707964
+scale = Vector2(2, 5)
 
-[node name="Platform22" parent="." unique_id=2130630719 instance=ExtResource("2_bo1nx")]
-modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
-position = Vector2(1946, 413.00003)
-scale = Vector2(0.10879955, 10.751991)
+[node name="Slope2" parent="Level" unique_id=1622329698 instance=ExtResource("4_jjvhh")]
+position = Vector2(1984, 1792)
+scale = Vector2(4, 3)
 
-[node name="LevelInteract" type="StaticBody2D" parent="." unique_id=1384971656]
-position = Vector2(2252, 528)
-scale = Vector2(2.4, 2.4)
+[node name="Slope11" parent="Level" unique_id=2002968427 instance=ExtResource("4_jjvhh")]
+position = Vector2(4416, 2304)
+scale = Vector2(4, 2.5)
+
+[node name="Slope13" parent="Level" unique_id=843288587 instance=ExtResource("4_jjvhh")]
+position = Vector2(5183.9995, 1904)
+rotation = -3.1415927
+scale = Vector2(5, 2)
+
+[node name="Slope15" parent="Level" unique_id=992481580 instance=ExtResource("4_jjvhh")]
+position = Vector2(5279.9995, 1968)
+rotation = -3.1415927
+scale = Vector2(3, 1.5)
+
+[node name="Slope14" parent="Level" unique_id=249665541 instance=ExtResource("4_jjvhh")]
+position = Vector2(4416, 1904)
+rotation = -4.712389
+scale = Vector2(2.5, 4)
+
+[node name="Slope16" parent="Level" unique_id=1758527110 instance=ExtResource("4_jjvhh")]
+position = Vector2(5024, 31.999996)
+rotation = -6.2831855
+scale = Vector2(2, 2)
+
+[node name="Slope22" parent="Level" unique_id=1906107616 instance=ExtResource("4_jjvhh")]
+position = Vector2(5024, 32)
+rotation = -9.424778
+scale = Vector2(2, 2)
+
+[node name="Slope24" parent="Level" unique_id=370729792 instance=ExtResource("4_jjvhh")]
+position = Vector2(3008, 1728)
+rotation = -10.995575
+scale = Vector2(2, 2)
+
+[node name="Slope25" parent="Level" unique_id=740822092 instance=ExtResource("4_jjvhh")]
+position = Vector2(1824, 1888)
+rotation = -10.995575
+scale = Vector2(2, 2)
+
+[node name="Slope26" parent="Level" unique_id=1741972240 instance=ExtResource("4_jjvhh")]
+position = Vector2(1824, 1344)
+rotation = -12.566371
+scale = Vector2(2, 2)
+
+[node name="Slope27" parent="Level" unique_id=367859843 instance=ExtResource("4_jjvhh")]
+position = Vector2(1824, 224)
+rotation = -10.995575
+scale = Vector2(2, 2)
+
+[node name="Slope28" parent="Level" unique_id=1558077093 instance=ExtResource("4_jjvhh")]
+position = Vector2(2528, 224)
+rotation = -9.424778
+scale = Vector2(2, 2)
+
+[node name="Slope29" parent="Level" unique_id=2026622246 instance=ExtResource("4_jjvhh")]
+position = Vector2(3488, 224)
+rotation = -10.995575
+scale = Vector2(2, 2)
+
+[node name="Slope30" parent="Level" unique_id=640405785 instance=ExtResource("4_jjvhh")]
+position = Vector2(3840, 224)
+rotation = -9.424778
+scale = Vector2(2, 2)
+
+[node name="Slope31" parent="Level" unique_id=1082382372 instance=ExtResource("4_jjvhh")]
+position = Vector2(1376, 256)
+rotation = -7.853982
+scale = Vector2(2, 2)
+
+[node name="Slope32" parent="Level" unique_id=781746100 instance=ExtResource("4_jjvhh")]
+position = Vector2(480, 672)
+rotation = -9.424778
+scale = Vector2(2, 2)
+
+[node name="Slope33" parent="Level" unique_id=219135648 instance=ExtResource("4_jjvhh")]
+position = Vector2(1376, 992)
+rotation = -9.424778
+scale = Vector2(2, 2)
+
+[node name="Slope34" parent="Level" unique_id=1937741099 instance=ExtResource("4_jjvhh")]
+position = Vector2(4416, 1840)
+rotation = -12.566371
+scale = Vector2(2, 2)
+
+[node name="Slope35" parent="Level" unique_id=905185550 instance=ExtResource("4_jjvhh")]
+position = Vector2(4416, 32)
+rotation = -10.995575
+scale = Vector2(2, 2)
+
+[node name="Slope21" parent="Level" unique_id=2091497915 instance=ExtResource("4_jjvhh")]
+position = Vector2(5280, -224)
+rotation = -6.2831855
+scale = Vector2(2, 2)
+
+[node name="Slope23" parent="Level" unique_id=843790732 instance=ExtResource("4_jjvhh")]
+position = Vector2(5280, 32)
+rotation = -4.712389
+scale = Vector2(2, 2)
+
+[node name="Slope17" parent="Level" unique_id=1340264441 instance=ExtResource("4_jjvhh")]
+position = Vector2(5024, -224)
+rotation = -4.712389
+scale = Vector2(2, 2)
+
+[node name="Slope20" parent="Level" unique_id=214787530 instance=ExtResource("4_jjvhh")]
+position = Vector2(5024, -224)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+
+[node name="Slope18" parent="Level" unique_id=1457622646 instance=ExtResource("4_jjvhh")]
+position = Vector2(5280, -224)
+rotation = -3.1415927
+scale = Vector2(2, 2)
+
+[node name="Slope19" parent="Level" unique_id=869742467 instance=ExtResource("4_jjvhh")]
+position = Vector2(5280, 32)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+
+[node name="Slope3" parent="Level" unique_id=724840 instance=ExtResource("4_jjvhh")]
+position = Vector2(1824, 1696.0001)
+scale = Vector2(3, 2)
+
+[node name="Platform19" parent="Level" unique_id=850450029 instance=ExtResource("2_bo1nx")]
+position = Vector2(2848.0002, 1792)
+scale = Vector2(2.5, 1.5)
+
+[node name="Platform27" parent="Level" unique_id=81951040 instance=ExtResource("2_bo1nx")]
+position = Vector2(3008, 1728.0001)
+scale = Vector2(4, 1.5)
+
+[node name="Platform29" parent="Level" unique_id=1749295490 instance=ExtResource("2_bo1nx")]
+position = Vector2(3263.9998, 1728.0001)
+scale = Vector2(2.5, 6)
+
+[node name="Platform28" parent="Level" unique_id=1860654543 instance=ExtResource("2_bo1nx")]
+position = Vector2(3008, 1440.0001)
+scale = Vector2(4, 1.5)
+
+[node name="Slope4" parent="Level" unique_id=956423228 instance=ExtResource("4_jjvhh")]
+position = Vector2(2848, 1792)
+rotation = -1.5707964
+scale = Vector2(3, 4)
+
+[node name="Slope5" parent="Level" unique_id=1910475747 instance=ExtResource("4_jjvhh")]
+position = Vector2(3008, 1696.0001)
+rotation = -1.573877
+scale = Vector2(2, 3)
+
+[node name="Spike3" parent="Level" unique_id=116589670 instance=ExtResource("3_8gbba")]
+position = Vector2(1488, 2272)
+
+[node name="Spike10" parent="Level" unique_id=963824848 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 2224)
+rotation = 1.5707964
+
+[node name="Spike11" parent="Level" unique_id=1254799561 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 2192)
+rotation = 1.5707964
+
+[node name="Spike12" parent="Level" unique_id=1840743788 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 2160)
+rotation = 1.5707964
+
+[node name="Spike13" parent="Level" unique_id=1461789053 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 2128)
+rotation = 1.5707964
+
+[node name="Spike14" parent="Level" unique_id=541523582 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 2096)
+rotation = 1.5707964
+
+[node name="Spike15" parent="Level" unique_id=430239570 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 2064)
+rotation = 1.5707964
+
+[node name="Spike16" parent="Level" unique_id=1243987572 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 2032)
+rotation = 1.5707964
+
+[node name="Spike17" parent="Level" unique_id=948595154 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 2000)
+rotation = 1.5707964
+
+[node name="Spike18" parent="Level" unique_id=350825196 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 1968)
+rotation = 1.5707964
+
+[node name="Spike19" parent="Level" unique_id=1159219903 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 1936)
+rotation = 1.5707964
+
+[node name="Spike20" parent="Level" unique_id=792678301 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 1904)
+rotation = 1.5707964
+
+[node name="Spike21" parent="Level" unique_id=56395282 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 1872)
+rotation = 1.5707964
+
+[node name="Spike22" parent="Level" unique_id=2103109260 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 1840)
+rotation = 1.5707964
+
+[node name="Spike23" parent="Level" unique_id=1429089179 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 1808)
+rotation = 1.5707964
+
+[node name="Spike24" parent="Level" unique_id=1256995080 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 1776)
+rotation = 1.5707964
+
+[node name="Spike25" parent="Level" unique_id=570104281 instance=ExtResource("3_8gbba")]
+position = Vector2(1440, 1744)
+rotation = 1.5707964
+
+[node name="Spike26" parent="Level" unique_id=963625434 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 2224)
+rotation = -1.5707964
+
+[node name="Spike27" parent="Level" unique_id=1315176746 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 2192)
+rotation = -1.5707964
+
+[node name="Spike28" parent="Level" unique_id=1901100803 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 2160)
+rotation = -1.5707964
+
+[node name="Spike29" parent="Level" unique_id=791551306 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 2128)
+rotation = -1.5707964
+
+[node name="Spike30" parent="Level" unique_id=294336937 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 2096)
+rotation = -1.5707964
+
+[node name="Spike31" parent="Level" unique_id=1824155467 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 2064)
+rotation = -1.5707964
+
+[node name="Spike32" parent="Level" unique_id=1178751924 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 2032)
+rotation = -1.5707964
+
+[node name="Spike33" parent="Level" unique_id=419936035 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 2000)
+rotation = -1.5707964
+
+[node name="Spike34" parent="Level" unique_id=2136052484 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 1968)
+rotation = -1.5707964
+
+[node name="Spike35" parent="Level" unique_id=1965687829 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 1936)
+rotation = -1.5707964
+
+[node name="Spike36" parent="Level" unique_id=512740373 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 1904)
+rotation = -1.5707964
+
+[node name="Spike37" parent="Level" unique_id=1272733532 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 1872)
+rotation = -1.5707964
+
+[node name="Spike38" parent="Level" unique_id=36068006 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 1840)
+rotation = -1.5707964
+
+[node name="Spike39" parent="Level" unique_id=1664104275 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 1808)
+rotation = -1.5707964
+
+[node name="Spike40" parent="Level" unique_id=1460420884 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 1776)
+rotation = -1.5707964
+
+[node name="Spike41" parent="Level" unique_id=2059292168 instance=ExtResource("3_8gbba")]
+position = Vector2(1760, 1744)
+rotation = -1.5707964
+
+[node name="Spike4" parent="Level" unique_id=162516420 instance=ExtResource("3_8gbba")]
+position = Vector2(1520, 2272)
+
+[node name="Spike5" parent="Level" unique_id=1667728650 instance=ExtResource("3_8gbba")]
+position = Vector2(1552, 2272)
+
+[node name="Spike6" parent="Level" unique_id=2120974660 instance=ExtResource("3_8gbba")]
+position = Vector2(1584, 2272)
+
+[node name="Spike7" parent="Level" unique_id=538483436 instance=ExtResource("3_8gbba")]
+position = Vector2(1616, 2272)
+
+[node name="Spike8" parent="Level" unique_id=1040693086 instance=ExtResource("3_8gbba")]
+position = Vector2(1648, 2272)
+
+[node name="Spike9" parent="Level" unique_id=2067986739 instance=ExtResource("3_8gbba")]
+position = Vector2(1680, 2272)
+
+[node name="Spike42" parent="Level" unique_id=1309129 instance=ExtResource("3_8gbba")]
+position = Vector2(1712, 2272)
+
+[node name="Platform20" parent="Level" unique_id=1423600317 instance=ExtResource("2_bo1nx")]
+position = Vector2(2719.9998, 1504)
+rotation = 3.1415925
+scale = Vector2(9.5, 1.5)
+
+[node name="Platform21" parent="Level" unique_id=1469475003 instance=ExtResource("2_bo1nx")]
+position = Vector2(2912, 1440)
+rotation = 3.1415925
+scale = Vector2(15.5, 1)
+
+[node name="Platform22" parent="Level" unique_id=1706800009 instance=ExtResource("2_bo1nx")]
+position = Vector2(3007.9998, 1344)
+rotation = 3.1415925
+scale = Vector2(18.5, 1.5)
+
+[node name="Slope6" parent="Level" unique_id=456557216 instance=ExtResource("4_jjvhh")]
+position = Vector2(2112, 1504)
+rotation = 3.1415925
+scale = Vector2(4, 3)
+
+[node name="Slope7" parent="Level" unique_id=84095766 instance=ExtResource("4_jjvhh")]
+position = Vector2(1920.0002, 1440)
+rotation = 3.1415925
+scale = Vector2(3, 2)
+
+[node name="Slope8" parent="Level" unique_id=430816816 instance=ExtResource("4_jjvhh")]
+position = Vector2(2720, 1504.0001)
+rotation = 1.5707963
+scale = Vector2(3, 4)
+
+[node name="Slope9" parent="Level" unique_id=465938411 instance=ExtResource("4_jjvhh")]
+position = Vector2(2912, 1440.0001)
+rotation = 1.5677156
+scale = Vector2(1.9999998, 3)
+
+[node name="Map" type="Node2D" parent="Level" unique_id=1972324809]
+
+[node name="Slope36" parent="Level" unique_id=1597001527 instance=ExtResource("4_jjvhh")]
+position = Vector2(3904, 2304)
+
+[node name="Slope37" parent="Level" unique_id=557775099 instance=ExtResource("4_jjvhh")]
+position = Vector2(1440, 2272)
+
+[node name="Slope38" parent="Level" unique_id=96077993 instance=ExtResource("4_jjvhh")]
+position = Vector2(1760, 2272)
+rotation = -1.5707964
+
+[node name="Objects" type="Node2D" parent="." unique_id=1894197058]
+
+[node name="Door" type="StaticBody2D" parent="Objects" unique_id=1645302802]
+position = Vector2(2000, 160)
+scale = Vector2(0.5, 2.5)
+
+[node name="LevelInteract" type="StaticBody2D" parent="Objects/Door" unique_id=1384971656]
+position = Vector2(32, -28)
+scale = Vector2(2, 0.4)
 script = ExtResource("3_kry3j")
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelInteract" unique_id=997192183]
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Door/LevelInteract" unique_id=997192183]
 scale = Vector2(0.25, 0.25)
 hframes = 2
 
-[node name="Interactable" parent="LevelInteract" unique_id=1428330449 instance=ExtResource("4_21xkr")]
-interact_name = "Press F to win"
+[node name="Interactable" type="Area2D" parent="Objects/Door/LevelInteract" unique_id=1428330449]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("6_ynf5e")
+interact_name = "You need a key to open this door"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelInteract/Interactable" unique_id=1948169636]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Door/LevelInteract/Interactable" unique_id=1948169636]
+position = Vector2(-27, -9.5)
+shape = SubResource("RectangleShape2D_voe2a")
+debug_color = Color(0.23505685, 0.62857306, 0.31429526, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Door" unique_id=129761236]
+position = Vector2(32, -32)
+scale = Vector2(16, 2)
+shape = SubResource("RectangleShape2D_hptm8")
+
+[node name="ColorRect" type="ColorRect" parent="Objects/Door" unique_id=1043120916]
+offset_top = -64.0
+offset_right = 8.0
+scale = Vector2(8, 1)
+color = Color(0.41467443, 0.23016946, 0.037801962, 1)
+
+[node name="Lock" type="Sprite2D" parent="Objects/Door" unique_id=421208591]
+texture_filter = 1
+position = Vector2(8, -36)
+scale = Vector2(1.336, 0.2672)
+texture = ExtResource("6_21xkr")
+offset = Vector2(18, 23)
+
+[node name="Key" type="Node2D" parent="Objects" unique_id=1821336166]
+position = Vector2(3184, 1556)
+metadata/_edit_group_ = true
+
+[node name="LevelInteract" type="StaticBody2D" parent="Objects/Key" unique_id=1825667754]
+script = ExtResource("3_kry3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Key/LevelInteract" unique_id=748646810]
+scale = Vector2(0.25, 0.25)
+hframes = 2
+
+[node name="Interactable" parent="Objects/Key/LevelInteract" unique_id=1016293659 instance=ExtResource("4_21xkr")]
+interact_name = "F to Pick Up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Key/LevelInteract/Interactable" unique_id=2113448492]
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_ec6l8")
+debug_color = Color(0.643181, 0.5220953, 0.107061155, 0.41960785)
 
-[connection signal="area_entered" from="LevelInteract/Interactable" to="LevelInteract" method="_on_interactable_area_entered"]
-[connection signal="area_exited" from="LevelInteract/Interactable" to="LevelInteract" method="_on_interactable_area_exited"]
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Key" unique_id=2070539325]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("8_hptm8")
+
+[node name="Luna" type="Sprite2D" parent="." unique_id=1947837703]
+position = Vector2(5152, -96.00001)
+scale = Vector2(-0.255, 0.255)
+texture = ExtResource("11_d1ilt")
+
+[node name="DevText" type="Label" parent="." unique_id=2134423481]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4452.0
+offset_top = -484.0
+offset_right = 4699.0
+offset_bottom = -447.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hi! I'm the developer of this level, Liselle"
+label_settings = SubResource("LabelSettings_6iyac")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DevText2" type="Label" parent="." unique_id=2144903785]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4452.0
+offset_top = -384.0
+offset_right = 4700.0
+offset_bottom = -347.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thank you for playing it,
+and congrats on getting here!"
+label_settings = SubResource("LabelSettings_6iyac")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Level/Lava/Area2D" to="Level/Lava" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Level/Platform40/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Objects/Door/LevelInteract/Interactable" to="Objects/Door/LevelInteract" method="_on_interactable_area_entered"]
+[connection signal="area_exited" from="Objects/Door/LevelInteract/Interactable" to="Objects/Door/LevelInteract" method="_on_interactable_area_exited"]
+[connection signal="area_entered" from="Objects/Key/LevelInteract/Interactable" to="Objects/Key/LevelInteract" method="_on_interactable_area_entered"]
+[connection signal="area_exited" from="Objects/Key/LevelInteract/Interactable" to="Objects/Key/LevelInteract" method="_on_interactable_area_exited"]

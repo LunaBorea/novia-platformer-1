@@ -23,6 +23,9 @@ extends CharacterBody2D
 @export var wall_grace_time: float = 0.1 # seconds
 @export_range(0.0, 1.0) var minimum_wall_normal_x: float = 0.7
 
+@export_group("Items")
+@export var key_acquired: bool = false
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var last_grounded_time := -INF
@@ -44,15 +47,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Up"):
 		last_jump_pressed_time = now
 
+	var direction := Input.get_axis("Left", "Right")
+	
 	# Apply gravity and limit falling speed while sliding down a wall.
 	if not on_floor:
 		var current_gravity := fall_gravity if velocity.y > 0.0 else gravity
 		velocity.y += current_gravity * delta
 
-		if _can_use_saved_wall() and velocity.y > wall_slide_speed:
+		if _can_use_saved_wall() and velocity.y > wall_slide_speed and (-direction == signi(last_wall_normal.x)):
 			velocity.y = wall_slide_speed
 
-	var direction := Input.get_axis("Left", "Right")
 	var wall_jump_control_locked := now < wall_jump_control_locked_until
 
 	# Keep normal horizontal control briefly disabled after a wall kick,
@@ -88,7 +92,9 @@ func _physics_process(delta: float) -> void:
 				velocity.x = 0.0
 				_play_animation("idle")
 
-	animated_sprite.flip_h = last_direction > 0
+	animated_sprite.flip_h = last_direction < 0
+	if _can_use_saved_wall():
+		animated_sprite.flip_h = signi(get_wall_normal().x) < 0
 
 	var jump_is_buffered := now - last_jump_pressed_time <= jump_buffer_time
 	var can_coyote_jump := now - last_grounded_time <= coyote_time
@@ -136,3 +142,8 @@ func _can_use_saved_wall() -> bool:
 func _play_animation(animation_name: StringName) -> void:
 	if animated_sprite.animation != animation_name:
 		animated_sprite.play(animation_name)
+
+
+func _on_area_2d_body_entered(body):
+	if body is CharacterBody2D:
+		get_tree().paused = true

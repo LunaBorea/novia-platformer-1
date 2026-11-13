@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://dxsxpkj1thue8"]
 
-[ext_resource type="Texture2D" uid="uid://c3dkb7nemm27c" path="res://icon.svg" id="1_1rc8e"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_id86c"]
+size = Vector2(4, 32)
 
 [node name="Platform" type="StaticBody2D" unique_id=1916064717]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1358615246]
+position = Vector2(32, -32)
 scale = Vector2(16, 2)
 shape = SubResource("RectangleShape2D_id86c")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1109362471]
-position = Vector2(2.9802322e-06, 0)
-scale = Vector2(2.5, 0.32000017)
-texture = ExtResource("1_1rc8e")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=269154377]
+offset_top = -64.0
+offset_right = 8.0
+scale = Vector2(8, 1)
+color = Color(0.24477637, 0.2447764, 0.24477637, 1)

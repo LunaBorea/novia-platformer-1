@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://4vl3v84d02i0"]
+
+[node name="Slope" type="StaticBody2D" unique_id=1082057586]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1868835252]
+position = Vector2(13.6, 1.5999985)
+polygon = PackedVector2Array(-13.6, -1.5999985, -13.6, -33.6, 18.4, -1.5999985)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1188312285]
+position = Vector2(13.6, 1.5999985)
+color = Color(0.24477637, 0.2447764, 0.24477637, 1)
+polygon = PackedVector2Array(-13.6, -1.5999985, -13.6, -33.6, 18.4, -1.5999985)

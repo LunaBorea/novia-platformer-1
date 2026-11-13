@@ -33,7 +33,7 @@ offset_right = 27.5
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Press F to win
+text = "Press F
 "
 label_settings = SubResource("LabelSettings_hkgi3")
 horizontal_alignment = 1
